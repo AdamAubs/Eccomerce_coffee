@@ -1,0 +1,223 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-08-12 11:52-0500\n"
+"PO-Revision-Date: 2023-08-11 21:59-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: app/forms.py:9 app/forms.py:15 app/forms.py:32
+#, fuzzy
+msgid "Username"
+msgstr "Usuario"
+
+#: app/forms.py:10 app/forms.py:17
+msgid "Password"
+msgstr ""
+
+#: app/forms.py:11
+msgid "Remember Me"
+msgstr ""
+
+#: app/forms.py:12 app/routes.py:37 app/templates/login.html:2
+msgid "Sign In"
+msgstr "Iniciar sesión"
+
+#: app/forms.py:16
+msgid "Email"
+msgstr ""
+
+#: app/forms.py:18
+msgid "Repeat Password"
+msgstr ""
+
+#: app/forms.py:19 app/routes.py:56 app/templates/register.html:2
+msgid "Register"
+msgstr "Registrarse"
+
+#: app/forms.py:24
+msgid "Please use a different Username."
+msgstr "Por favor, use un nombre de usuario diferente."
+
+#: app/forms.py:29
+msgid "Please use a different email address."
+msgstr "Por favor, use una dirección de correo electrónico diferente."
+
+#: app/forms.py:33
+msgid "submit"
+msgstr ""
+
+#: app/forms.py:43
+msgid "Please use a different username."
+msgstr "Por favor, use un nombre de usuario diferente."
+
+#: app/forms.py:46
+#, fuzzy
+msgid "Add to Cart"
+msgstr "Agregar al carrito"
+
+#: app/forms.py:47 app/templates/checkout.html:26
+msgid "Remove From Cart"
+msgstr "Eliminar del carrito"
+
+#: app/forms.py:50
+#, fuzzy
+msgid "Check Out"
+msgstr "Pagar"
+
+#: app/routes.py:20 app/templates/base.html:47 app/templates/cancel.html:5
+#: app/templates/success.html:5
+msgid "Home"
+msgstr "Inicio"
+
+#: app/routes.py:30
+msgid "Invalid username or password"
+msgstr "Nombre de usuario o contraseña no válidos"
+
+#: app/routes.py:54
+msgid "Congratulations, you are now a registered user!"
+msgstr "¡Felicitaciones, ahora eres un usuario registrado!"
+
+#: app/routes.py:75
+msgid "Your changes have been saved"
+msgstr "Se han guardado sus cambios"
+
+#: app/routes.py:79 app/templates/edit_profile.html:3 app/templates/user.html:8
+msgid "Edit Profile"
+msgstr "Editar perfil"
+
+#: app/routes.py:88
+#, fuzzy, python-format
+msgid "Product %(name)s is not avalible"
+msgstr "El producto %(name)s no está disponible"
+
+#: app/routes.py:92
+#, python-format
+msgid "%(name)s added to order!"
+msgstr "¡%(name)s agregado al pedido!"
+
+#: app/routes.py:104
+#, python-format
+msgid "Product %(name)s is not in cart"
+msgstr "El producto %(name)s no está en el carrito"
+
+#: app/routes.py:108
+#, python-format
+msgid "%(name)s has been removed from cart"
+msgstr "Se ha eliminado %(name)s del carrito"
+
+#: app/routes.py:122 app/templates/checkout.html:3
+#: app/templates/checkout.html:43
+msgid "Checkout"
+msgstr "Pagar"
+
+#: app/routes.py:152
+msgid "No Items In Cart"
+msgstr "No hay productos en el carrito"
+
+#: app/templates/404.html:2
+msgid "File Not Found"
+msgstr "Archivo no encontrado"
+
+#: app/templates/404.html:3 app/templates/500.html:6
+msgid "Back"
+msgstr "Volver"
+
+#: app/templates/500.html:2
+msgid "An unexpected error has occurred"
+msgstr "Se ha producido un error inesperado"
+
+#: app/templates/500.html:4
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "El administrador ha sido notificado. Disculpa por las molestias."
+
+#: app/templates/base.html:19
+msgid "Larkin Coffee Shop"
+msgstr "Cafetería Larkin"
+
+#: app/templates/base.html:39
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: app/templates/base.html:54
+msgid "Profile"
+msgstr "Perfil"
+
+#: app/templates/base.html:58
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/base.html:61
+msgid "Cart"
+msgstr "Carrito"
+
+#: app/templates/cancel.html:3
+msgid "Don't worry"
+msgstr "No te preocupes"
+
+#: app/templates/cancel.html:4
+msgid "The order was canceled."
+msgstr "El pedido ha sido cancelado."
+
+#: app/templates/checkout.html:8
+msgid "Product"
+msgstr "Producto"
+
+#: app/templates/checkout.html:9
+msgid "Price"
+msgstr "Precio"
+
+#: app/templates/checkout.html:10
+msgid "Remove"
+msgstr "Eliminar"
+
+#: app/templates/checkout.html:16
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+#: app/templates/login.html:22
+msgid "New User?"
+msgstr "¿Nuevo usuario?"
+
+#: app/templates/login.html:22
+msgid "Click to Register!"
+msgstr "¡Haz clic para registrarte!"
+
+#: app/templates/success.html:3
+msgid "Your order is complete!"
+msgstr "¡Tu pedido está completo!"
+
+#: app/templates/success.html:4
+msgid "Thank you for your order!"
+msgstr "¡Gracias por tu pedido!"
+
+#: app/templates/user.html:6
+msgid "User"
+msgstr "Usuario"
+
+#: app/templates/user.html:15
+msgid "Purchase History"
+msgstr "Historial de compras"
+
+#~ msgid "Hello"
+#~ msgstr "Hola"
+
+#~ msgid "Product List"
+#~ msgstr "Lista de productos"
+
+#~ msgid "Add to cart"
+#~ msgstr "Agregar al carrito"
+

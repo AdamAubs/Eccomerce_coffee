@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+</div>
+<h1 class="mb-4">{{ _('Checkout') }}</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ _('Product') }}</th>
+        <th>{{ _('Price') }}</th>
+        <th>{{ _('Quantity') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cart_item in cart_items %}
+      <tr>
+        <td>{{ _('%(name)s', name=cart_item.product.name) }}</td>
+        <td>${{ cart_item.product.price }}</td>
+        <td>{{ cart_item.quantity }}</td>
+        <td>
+          <form
+            action="{{ url_for('main.removeFromCart', name=cart_item.product.name)}}"
+            method="post"
+          >
+            {{ form.hidden_tag() }}
+            <button class="btn btn-danger btn-sm" {{form.removeFromCart}}>
+              {{ _('Remove From Cart') }}
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h3>Total: ${{ cart_total }}</h3>
+  <form action="{{ url_for('checkout.order') }}" method="post">
+    {{ form.hidden_tag() }} {% for cart_item in cart_items %}
+    <input
+      type="hidden"
+      name="product_ids[]"
+      value="{{ cart_item.product.id }}"
+    />
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">{{ _('Checkout') }}</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,123 @@
+2023-08-09 21:16:28,877 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-09 21:17:06,698 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-09 21:17:16,104 ERROR: Exception on /edit_profile [POST] [in /Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/app/routes.py", line 80, in edit_profile
+    db.session.commit()
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1920, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1236, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+    self.session.flush()
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4163, in flush
+    self._flush(objects)
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4298, in _flush
+    with util.safe_reraise():
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+    flush_context.execute()
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+           ^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/AdamsHole/Desktop/Coffee_Shop/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=? WHERE user.id = ?]
+[parameters: ('susan', 3)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-08-10 08:36:40,100 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 08:36:55,228 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 10:27:30,666 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 10:27:38,875 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 10:33:30,799 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:11:05,972 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:12:59,314 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:21:55,504 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:24:01,629 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:25:24,631 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:33:50,584 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 11:34:09,377 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:21:16,111 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:21:40,700 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:21:58,339 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:22:28,601 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:23:26,382 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:25:05,416 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:25:46,212 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:25:54,696 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:26:01,724 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:28:26,726 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:39:24,285 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:41:55,777 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:43:34,688 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:48:36,449 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 12:53:21,462 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:24:46,339 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:29:19,822 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:30:39,412 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:33:34,594 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:33:49,306 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:33:56,180 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:47:49,001 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:48:56,137 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:49:40,833 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-10 13:50:31,260 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:44]
+2023-08-12 11:22:34,520 INFO: Coffee startup [in /Users/AdamsHole/Desktop/Coffee_Shop/app/__init__.py:52]

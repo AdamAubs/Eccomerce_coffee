@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<table>
+  <tr valign="top">
+    <td><img src="{{ user.avatar(128) }}" /></td>
+    <td>
+      <h1>{{ _('User') }}: {{ user.username }}</h1>
+      {% if user == current_user %}
+      <p>
+        <a href="{{ url_for('main.edit_profile')}}">{{ _('Edit Profile') }}</a>
+      </p>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+
+<hr />
+<h1>{{ _('Purchase History') }}</h1>
+{% for order in orders %}
+<table>
+  <tr valign="top">
+    <td><img src="{{ order.student.avatar(36) }}" /></td>
+    <td>
+      {{ order.student.username }} <br />
+      <b> {{ order.drink_type }} </b>
+    </td>
+  </tr>
+</table>
+{% endfor %} {% endblock %}

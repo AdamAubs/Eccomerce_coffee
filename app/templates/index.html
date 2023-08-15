@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+
+
+<h1>{{ _('Hello') }}, {{ current_user.username }}!</h1>
+<div class="container">
+  <h1 class="mt-4">{{ _('Product List') }}</h1>
+  <img src="" alt="" />
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="{{ url_for('static', filename='images/image1.jpg') }}"
+          class="card-img-top"
+        />
+        <form
+            action="{{ url_for('main.addToCart', name=product.name)}}"
+            method="post"
+          >
+            {{ form.hidden_tag() }}
+        <div class="card-body">
+            <div class="row align-items-center">
+                <span id="translation{{ product.id }}">
+                  {% if product.name.language == g.locale %}
+                  <a href="javascript:translate(
+                    '#product{{ product.id }}',
+                    '#translation{{ product.id }}',
+                    '{{ product.language }}',
+                    '{{ g.locale }}');">>{{ _('Translatqe') }}</a>
+                  {% endif %}
+                </span>
+                <div class="col-md-8">
+                    <h4><span id="product{{ product.id }}" class="card-title">{{ product.name }}</span></h4>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="card-text">${{ product.price }}</h4>
+                </div>
+            </div>
+          <!-- Add "Add to Cart" button or other interactions here -->
+          
+            <button class="btn btn-primary" {{ form.addToCart }}>
+              {{ _('Add to cart') }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

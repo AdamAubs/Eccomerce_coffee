@@ -1,0 +1,10 @@
+{% extends 'admin/base.html' %} {% block body %}
+<h3>Total Revenue: {{ total_revenue }}</h3>
+<h3>Total Orders: {{ total_orders }}</h3>
+<h3>Top Selling Products:</h3>
+<ul>
+  {% for product_name, total_quantity in top_products %}
+  <li>{{ product_name }}: {{ total_quantity }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
